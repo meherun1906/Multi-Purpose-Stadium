@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="402.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.CEO.AddPoliciesController">
+   <children>
+      <Label layoutX="125.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Add Departmental Policies">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="48.0" text="Select Department : " />
+      <ComboBox fx:id="departmentComboBox" layoutX="133.0" layoutY="44.0" prefWidth="150.0" />
+      <Label layoutX="16.0" layoutY="85.0" text="Policy ID :" />
+      <TextField fx:id="policyIdTextField" layoutX="109.0" layoutY="81.0" />
+      <Label layoutX="16.0" layoutY="120.0" text="Policy : " />
+      <TextArea fx:id="policyTextArea" layoutX="94.0" layoutY="120.0" prefHeight="42.0" prefWidth="302.0" />
+      <Button layoutX="176.0" layoutY="175.0" mnemonicParsing="false" onAction="#addPolicyButtonOnAction" text="Add" />
+      <TableView fx:id="policyTableView" layoutX="14.0" layoutY="247.0" prefHeight="147.0" prefWidth="390.0">
+        <columns>
+          <TableColumn fx:id="policyIdTableColumn" prefWidth="65.59991645812988" text="Policy ID" />
+          <TableColumn fx:id="departmentTableColumn" prefWidth="123.20000457763672" text="Department" />
+            <TableColumn fx:id="policyTableColumn" prefWidth="200.79998779296875" text="Policy" />
+        </columns>
+      </TableView>
+      <Label fx:id="addPolicyMessageLabel" layoutX="54.0" layoutY="216.0" prefHeight="18.0" prefWidth="302.0" />
+   </children>
+</AnchorPane>
