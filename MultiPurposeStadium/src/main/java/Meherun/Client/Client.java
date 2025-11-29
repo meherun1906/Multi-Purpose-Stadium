@@ -8,8 +8,8 @@ public class Client extends User implements Serializable {
     private String address;
     private final String gender;
 
-    public Client(String iD, String name, String eMail, String phone, String passWord, String address, String gender) {
-        super(iD, name, eMail, phone, passWord);
+    public Client(String iD, String name, String eMail, String phone, String designation, String passWord, String address, String gender) {
+        super(iD, name, eMail, phone, designation, passWord);
         this.address = address;
         this.gender = gender;
     }
