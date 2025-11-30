@@ -24,6 +24,8 @@ public class addStaffController
     private TextField contactTF;
     @javafx.fxml.FXML
     private TableColumn<Staff,Integer> idCol;
+    @javafx.fxml.FXML
+    private TextField staffIDTF;
 
     @javafx.fxml.FXML
     public void initialize() {
