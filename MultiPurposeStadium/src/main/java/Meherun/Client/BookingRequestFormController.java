@@ -1,7 +1,10 @@
 package Meherun.Client;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
 public class BookingRequestFormController
 {
@@ -27,6 +30,8 @@ public class BookingRequestFormController
     private Label messageLAbel;
     @javafx.fxml.FXML
     private TextField companyTextField;
+    @javafx.fxml.FXML
+    private AnchorPane partialAnchorPane;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -34,5 +39,13 @@ public class BookingRequestFormController
 
     @javafx.fxml.FXML
     public void submitRequestButtonOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/Client/bookingDetailsView.fxml"));
+            Node node = loader.load();
+            partialAnchorPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            //
+        }
     }
 }
