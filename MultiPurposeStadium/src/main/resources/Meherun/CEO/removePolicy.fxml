@@ -11,27 +11,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="402.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.CEO.RemovePoliciesController">
+<AnchorPane prefHeight="494.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.CEO.RemovePoliciesController">
    <children>
-      <ComboBox fx:id="selectDepartmentCB" layoutX="14.0" layoutY="94.0" prefHeight="26.0" prefWidth="142.0" />
-      <Text layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Department : " />
-      <Button layoutX="43.0" layoutY="133.0" mnemonicParsing="false" onAction="#viewPoliciesButtonOnAction" text="View Policies" />
-      <Text layoutX="257.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Policy ID :" />
-      <TextField fx:id="removePolicyIdTF" layoutX="237.0" layoutY="94.0" />
-      <Button layoutX="272.0" layoutY="133.0" mnemonicParsing="false" onAction="#removePolicyButtonOnAction" text="Remove" />
-      <Line endX="-100.00003051757812" endY="90.60000610351562" layoutX="306.0" layoutY="75.0" startX="-100.0" />
-      <TableView fx:id="policyTableView" layoutX="10.0" layoutY="229.0" prefHeight="158.0" prefWidth="390.0">
+      <ComboBox fx:id="selectDepartmentCB" layoutX="50.0" layoutY="140.0" prefHeight="26.0" prefWidth="142.0" />
+      <Text layoutX="50.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Department : " />
+      <Button layoutX="79.0" layoutY="179.0" mnemonicParsing="false" onAction="#viewPoliciesButtonOnAction" text="View Policies" />
+      <Text layoutX="293.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Policy ID :" />
+      <TextField fx:id="removePolicyIdTF" layoutX="273.0" layoutY="140.0" />
+      <Button layoutX="308.0" layoutY="179.0" mnemonicParsing="false" onAction="#removePolicyButtonOnAction" text="Remove" />
+      <Line endX="-100.00003051757812" endY="90.60000610351562" layoutX="342.0" layoutY="121.0" startX="-100.0" />
+      <TableView fx:id="policyTableView" layoutX="46.0" layoutY="275.0" prefHeight="158.0" prefWidth="390.0">
          <columns>
             <TableColumn fx:id="policyIdTableColumn" prefWidth="65.59991645812988" text="Policy ID" />
-            <TableColumn fx:id="departmentTableColumn" prefWidth="123.20000457763672" text="Department" />
-            <TableColumn fx:id="policyTableColumn" prefWidth="200.79998779296875" text="Policy" />
+            <TableColumn fx:id="departmentTableColumn" prefWidth="104.79998779296875" text="Department" />
+            <TableColumn fx:id="policyTableColumn" prefWidth="220.00001525878906" text="Policy" />
          </columns>
       </TableView>
-      <Label fx:id="removePolicyMessageLabel" layoutX="62.0" layoutY="193.0" prefHeight="18.0" prefWidth="270.0" />
-      <Text layoutX="122.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Departmental Policy">
+      <Label fx:id="removePolicyMessageLabel" layoutX="78.0" layoutY="231.0" prefHeight="26.0" prefWidth="290.0" />
+      <Text layoutX="158.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Departmental Policy">
          <font>
-            <Font size="13.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Text>
    </children>

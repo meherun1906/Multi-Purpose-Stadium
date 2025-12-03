@@ -46,8 +46,8 @@ public class logInViewController
                     }
                 }
             } catch (Exception e) {
-                //e.printStackTrace();
-                messageLabel.setText("User ID and PassWord doesn't match");
+                e.printStackTrace();
+                //messageLabel.setText("User ID and PassWord doesn't match");
             }
             if (log) {
                 try {

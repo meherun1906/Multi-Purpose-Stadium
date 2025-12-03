@@ -6,20 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="402.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.CEO.EventStatisticsController">
+<AnchorPane prefHeight="494.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.CEO.EventStatisticsController">
    <children>
-      <Label layoutX="161.0" layoutY="28.0" text="Event Statistics">
+      <Label layoutX="205.0" layoutY="33.0" text="Event Statistics">
          <font>
-            <Font size="14.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="fromYearTextField" layoutX="132.0" layoutY="77.0" />
-      <TextField fx:id="toYearTextField" layoutX="132.0" layoutY="117.0" />
-      <Label layoutX="24.0" layoutY="81.0" text="From Year : " />
-      <Label layoutX="24.0" layoutY="121.0" text="To Year : " />
-      <Button layoutX="136.0" layoutY="188.0" mnemonicParsing="false" onAction="#totalNumberOfEventsButtonOnAction" text="Total Number of Events" />
-      <Label fx:id="resultLabel" alignment="TOP_CENTER" layoutX="71.0" layoutY="269.0" prefHeight="52.0" prefWidth="262.0">
+      <TextField fx:id="fromYearTextField" layoutX="190.0" layoutY="105.0" />
+      <TextField fx:id="toYearTextField" layoutX="190.0" layoutY="145.0" />
+      <Label layoutX="82.0" layoutY="109.0" text="From Year : " />
+      <Label layoutX="82.0" layoutY="149.0" text="To Year : " />
+      <Button layoutX="194.0" layoutY="216.0" mnemonicParsing="false" onAction="#totalNumberOfEventsButtonOnAction" text="Total Number of Events" />
+      <Label fx:id="resultLabel" alignment="TOP_CENTER" layoutX="129.0" layoutY="297.0" prefHeight="52.0" prefWidth="262.0">
          <font>
             <Font size="13.0" />
          </font>
