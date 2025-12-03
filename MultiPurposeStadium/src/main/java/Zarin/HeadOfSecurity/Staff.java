@@ -1,25 +1,27 @@
 package Zarin.HeadOfSecurity;
 
-public class Staff {
-    private int id;
+import java.io.Serializable;
+
+public class Staff implements Serializable {
+    private String id;
     private String name;
     private String role;
     private String contact;
     private String email;
 
-    public Staff(int id, String name, String role, String email, String contact) {
+    public Staff(String id, String name, String role, String contact, String email) {
         this.id = id;
         this.name = name;
         this.role = role;
-        this.email = email;
         this.contact = contact;
+        this.email = email;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

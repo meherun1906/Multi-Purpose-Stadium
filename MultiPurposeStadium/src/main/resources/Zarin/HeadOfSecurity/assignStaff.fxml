@@ -6,21 +6,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="427.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zarin.HeadOfSecurity.assignStaffController">
    <children>
-      <Label layoutX="14.0" layoutY="23.0" text="Select Staff" />
+      <Label layoutX="14.0" layoutY="23.0" text="Staff Name" />
       <Label layoutX="14.0" layoutY="51.0" text="Select Gate" />
       <Label layoutX="202.0" layoutY="23.0" text="Select Zone" />
       <Label layoutX="192.0" layoutY="51.0" text="Pick Assignment Date" />
-      <ComboBox fx:id="staffCB" layoutX="83.0" layoutY="19.0" prefHeight="17.0" prefWidth="101.0" />
       <ComboBox fx:id="gateCB" layoutX="83.0" layoutY="47.0" prefHeight="17.0" prefWidth="101.0" />
       <ComboBox fx:id="zoneCB" layoutX="272.0" layoutY="19.0" prefHeight="17.0" prefWidth="101.0" />
-      <DatePicker fx:id="assignmentDateCB" layoutX="315.0" layoutY="47.0" prefHeight="25.0" prefWidth="101.0" />
-      <Button layoutX="171.0" layoutY="104.0" mnemonicParsing="false" onAction="#assignOA" text="Assign Staff" />
-      <Label fx:id="messageL" layoutX="181.0" layoutY="146.0" prefHeight="17.0" prefWidth="59.0" style="-fx-background-color: gray;" />
+      <DatePicker fx:id="assignmentDateDP" layoutX="315.0" layoutY="47.0" prefHeight="25.0" prefWidth="101.0" />
+      <Button layoutX="171.0" layoutY="84.0" mnemonicParsing="false" onAction="#assignOA" text="Assign Staff" />
+      <Label fx:id="messageL" layoutX="166.0" layoutY="123.0" prefHeight="17.0" prefWidth="89.0" style="-fx-background-color: gray;" />
       <TableView fx:id="assignTV" layoutX="7.0" layoutY="191.0" prefHeight="200.0" prefWidth="438.0">
         <columns>
           <TableColumn fx:id="staffCol" prefWidth="107.5" text="Staff Name" />
@@ -29,5 +28,7 @@
             <TableColumn fx:id="dateCol" prefWidth="108.0" text="Date" />
         </columns>
       </TableView>
+      <TextField fx:id="nameTF" layoutX="95.0" layoutY="19.0" prefHeight="25.0" prefWidth="89.0" />
+      <Button layoutX="171.0" layoutY="155.0" mnemonicParsing="false" onAction="#loadOA" text="Load in Table" />
    </children>
 </AnchorPane>
