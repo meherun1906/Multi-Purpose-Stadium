@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="427.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zarin.HeadOfSecurity.headOfSecurityDashboardController">
+<AnchorPane fx:id="anchorPane" prefHeight="473.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zarin.HeadOfSecurity.headOfSecurityDashboardController">
    <children>
       <Label layoutX="27.0" layoutY="32.0" text="Head of Security Dashboard">
          <font>
@@ -14,7 +14,7 @@
          </font>
       </Label>
       <Line endX="-6.0" endY="257.0" layoutX="204.0" layoutY="122.0" startX="-6.0" startY="-73.0" />
-      <AnchorPane fx:id="partialPane" layoutX="199.0" layoutY="1.0" prefHeight="427.0" prefWidth="451.0">
+      <AnchorPane fx:id="partialPane" layoutX="207.0" layoutY="19.0" prefHeight="428.0" prefWidth="451.0">
          <children>
             <Label layoutX="164.0" layoutY="154.0" text="Welcome">
                <font>
@@ -29,7 +29,6 @@
       <Button layoutX="47.0" layoutY="208.0" mnemonicParsing="false" onAction="#reportInOA" text="Report Incident" />
       <Button layoutX="22.0" layoutY="244.0" mnemonicParsing="false" onAction="#manageIncidentOA" prefHeight="25.0" prefWidth="141.0" text="Update Incident status" />
       <Button layoutX="35.0" layoutY="288.0" mnemonicParsing="false" onAction="#attendanceReportOA" text="Attendance Report" />
-      <Button layoutX="63.0" layoutY="367.0" mnemonicParsing="false" onAction="#logOutOA" text="Log Out" />
-      <Button layoutX="36.0" layoutY="330.0" mnemonicParsing="false" onAction="#searchOA" text="Staff List and Filter" />
+      <Button layoutX="36.0" layoutY="330.0" mnemonicParsing="false" onAction="#filterOA" text="Filter staff by Name" />
    </children>
 </AnchorPane>

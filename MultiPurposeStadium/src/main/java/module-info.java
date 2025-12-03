@@ -12,4 +12,7 @@ module mainpackage.multipurposestadium {
 
     opens Meherun.Client to javafx.fxml;
     exports Meherun.Client;
+
+    opens Zarin.HeadOfSecurity to javafx.fxml;
+    exports Zarin.HeadOfSecurity;
 }

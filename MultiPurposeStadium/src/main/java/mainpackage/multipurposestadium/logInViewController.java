@@ -2,6 +2,7 @@ package mainpackage.multipurposestadium;
 
 import Meherun.CEO.CEO;
 import Meherun.Client.Client;
+import Zarin.HeadOfSecurity.HeadOfSecurity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -59,35 +60,64 @@ public class logInViewController
                 }
             }
         }
-            if (logInIdTextField.getText().length() == 4) {
-                Client logClient = null;
-                boolean client = false;
-                try {
-                    FileInputStream fis = new FileInputStream("Client.bin");
-                    ObjectInputStream ois = new ObjectInputStream(fis);
+        if (logInIdTextField.getText().length() == 4) {
+            Client logClient = null;
+            boolean client = false;
+            try {
+                FileInputStream fis = new FileInputStream("Client.bin");
+                ObjectInputStream ois = new ObjectInputStream(fis);
 
-                    while (true) {
-                        Client c = (Client) ois.readObject();
-                        if ((logInIdTextField.getText().equals(c.getiD())) && (logInPasswordField.getText().equals(c.getPassWord()))) {
-                            client = true;
-                            logClient = c;
-                            break;
-                        }
+                while (true) {
+                    Client c = (Client) ois.readObject();
+                    if ((logInIdTextField.getText().equals(c.getiD())) && (logInPasswordField.getText().equals(c.getPassWord()))) {
+                        client = true;
+                        logClient = c;
+                        break;
                     }
-                } catch (Exception e) {
-                    //e.printStackTrace();
-                    messageLabel.setText("User ID and PassWord doesn't match");
                 }
-                if (client) {
-                    try {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/Client/clientDashboard.fxml"));
-                        Node node = loader.load();
-                        logInAnchorPane.getChildren().setAll(node);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+            } catch (Exception e) {
+                //e.printStackTrace();
+                messageLabel.setText("User ID and PassWord doesn't match");
+            }
+            if (client) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/Client/clientDashboard.fxml"));
+                    Node node = loader.load();
+                    logInAnchorPane.getChildren().setAll(node);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         }
+        if (logInIdTextField.getText().length() == 5) {
+            HeadOfSecurity logHoS = null;
+            boolean log = false;
+            try {
+                FileInputStream fis = new FileInputStream("HeadOfSecurity.bin");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+
+                while (true) {
+                    HeadOfSecurity hs = (HeadOfSecurity) ois.readObject();
+                    if ((logInIdTextField.getText().equals(hs.getiD())) && (logInPasswordField.getText().equals(hs.getPassWord()))) {
+                        log = true;
+                        logHoS = hs;
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                //e.printStackTrace();
+                messageLabel.setText("User ID and PassWord doesn't match");
+            }
+            if (log) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/HeadOfSecurity/headOfSecurityDashboard.fxml"));
+                    Node node = loader.load();
+                    logInAnchorPane.getChildren().setAll(node);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 }
