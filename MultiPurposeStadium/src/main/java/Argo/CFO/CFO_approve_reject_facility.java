@@ -2,10 +2,36 @@ package Argo.CFO;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+
+import java.time.LocalDate;
 
 public class CFO_approve_reject_facility {
     private String request, amount;
     public String reason;
+    public LocalDate date;
+    @javafx.fxml.FXML
+    private AnchorPane dateFxId;
+
+    public CFO_approve_reject_facility(LocalDate date) {
+        this.date = date;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "CFO_approve_reject_facility{" +
+                "date=" + date +
+                '}';
+    }
+
     @javafx.fxml.FXML
     private CheckBox yesFxId;
     @javafx.fxml.FXML
@@ -49,15 +75,6 @@ public class CFO_approve_reject_facility {
 
     public void setReason(String reason) {
         this.reason = reason;
-    }
-
-    @Override
-    public String toString() {
-        return "CFO_approve_reject_facility{" +
-                "request='" + request + '\'' +
-                ", amount='" + amount + '\'' +
-                ", reason='" + reason + '\'' +
-                '}';
     }
 
     @javafx.fxml.FXML
