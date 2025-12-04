@@ -1,7 +1,76 @@
 package Zarin.MaintenanceManager;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.event.*;
+import javafx.scene.layout.AnchorPane;
 
 public class maintenanceManagerDashboardController
 {
     @javafx.fxml.FXML
+    private AnchorPane anchorpane;
+    @javafx.fxml.FXML
+    private AnchorPane partialPane;
+
+    @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void createTaskOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/createNewMaintenanceTask.fxml"));
+            Node node = loader.load();
+            partialPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            //
+        }
+
+    }
+
+    @javafx.fxml.FXML
+    public void requestSuppliesOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void viewMaintenanceScheduleOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/saveAndViewMaintenanceSchedule.fxml"));
+            Node node = loader.load();
+            partialPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            //
+        }
+
+    }
+
+    @javafx.fxml.FXML
+    public void checkSuppliesOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/checkSupplies.fxml"));
+            Node node = loader.load();
+            partialPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            //
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void viewSupplyReqOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void recordTaskCompletionOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void facilitySummaryOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void equipmentServiceLogsOA(ActionEvent actionEvent) {
+    }
+}

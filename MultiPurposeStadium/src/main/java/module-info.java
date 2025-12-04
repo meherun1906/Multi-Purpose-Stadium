@@ -2,6 +2,7 @@ module mainpackage.multipurposestadium {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    //requires mainpackage.multipurposestadium;
 
 
     opens mainpackage.multipurposestadium to javafx.fxml;
@@ -15,4 +16,9 @@ module mainpackage.multipurposestadium {
 
     opens Zarin.HeadOfSecurity to javafx.fxml;
     exports Zarin.HeadOfSecurity;
+
+    opens Zarin.MaintenanceManager to javafx.fxml;
+    exports Zarin.MaintenanceManager;
+
+
 }
