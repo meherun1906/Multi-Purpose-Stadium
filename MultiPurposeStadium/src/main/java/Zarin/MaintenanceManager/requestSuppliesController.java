@@ -5,12 +5,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.*;
 
-public class checkSuppliesController
+public class requestSuppliesController
 {
     @javafx.fxml.FXML
     private Label messageL;
     @javafx.fxml.FXML
-    private ComboBox<String> selectFacilityCB;
+    private TableColumn<SupplyItem,String> facilityCol;
     @javafx.fxml.FXML
     private TableColumn<SupplyItem,String> statusCol;
     @javafx.fxml.FXML
@@ -18,15 +18,15 @@ public class checkSuppliesController
     @javafx.fxml.FXML
     private TableColumn<SupplyItem,Integer> quantityCol;
     @javafx.fxml.FXML
+    private TextField quantityTF;
+    @javafx.fxml.FXML
     private ComboBox<String> itemCB;
     @javafx.fxml.FXML
-    private TableView<SupplyItem> supplyTV;
+    private TableView<SupplyItem> requestTV;
     @javafx.fxml.FXML
     private ComboBox<String> facilityCB;
     @javafx.fxml.FXML
     private TableColumn<SupplyItem,String> itemCol;
-    @javafx.fxml.FXML
-    private TextField quantityTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -36,22 +36,15 @@ public class checkSuppliesController
                 "Restroom Block A",
                 "Generator Room"
         );
-        selectFacilityCB.getItems().addAll(
-                "Pitch",
-                "VIP Lounge",
-                "Restroom Block A",
-                "Generator Room"
-        );
-
         itemCB.getItems().addAll(
                 "Toilet Paper",
                 "Soap",
                 "Paper Towels"
         );
+        facilityCol.setCellValueFactory(new PropertyValueFactory<>("facility"));
         itemCol.setCellValueFactory(new PropertyValueFactory<>("item"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
-
     }
 
     @javafx.fxml.FXML
@@ -61,24 +54,39 @@ public class checkSuppliesController
                 || itemCB.getValue() == null
                 || quantityTF.getText().isEmpty()) {
 
-            messageL.setText("Please select Facility, Item and enter Quantity.");
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Invalid Quantity");
+            a.setContentText("Please enter a valid quantity (e.g., 1, 5, 20).");
+            a.showAndWait();
             return;
         }
+
         int quantity;
         try {
             quantity = Integer.parseInt(quantityTF.getText().trim());
         } catch (NumberFormatException e) {
-            messageL.setText("Quantity must be a number.");
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Invalid Quantity");
+            a.setContentText("Please enter a valid quantity (e.g., 1, 5, 20).");
+            a.showAndWait();
             return;
         }
-        String status = calculateStatus(quantity);
+        if (quantity <= 0) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Invalid Quantity");
+            a.setHeaderText(null);
+            a.setContentText("Please enter a valid quantity (e.g., 1, 5, 20).");
+            a.showAndWait();
+            return;
+        }
         try {
+            //File f = new File("SupplyData.bin");
             File f = new File("SupplyData.bin");
             SupplyItem si = new SupplyItem(
                     facilityCB.getValue(),
                     itemCB.getValue(),
                     quantity,
-                    status
+                    "Pending"
             );
             if (f.exists()) {
                 FileOutputStream fos = new FileOutputStream(f, true);
@@ -91,7 +99,9 @@ public class checkSuppliesController
                 oos.writeObject(si);
                 oos.close();
             }
-            messageL.setText("Supply Saved");
+            messageL.setText("Supply request submitted.");
+            requestTV.getItems().add(si);
+
             facilityCB.getSelectionModel().clearSelection();
             itemCB.getSelectionModel().clearSelection();
             quantityTF.clear();
@@ -100,54 +110,42 @@ public class checkSuppliesController
             e.printStackTrace();
         }
     }
-
     @javafx.fxml.FXML
     public void loadOA(ActionEvent actionEvent) {
-        supplyTV.getItems().clear();
+        requestTV.getItems().clear();
         messageL1.setText("");
 
-        String selectedFacility = selectFacilityCB.getValue();
-
-        if (selectedFacility == null) {
-            messageL1.setText("Please select a facility to load supplies.");
-            return;
-        }
-
-        File f = new File("SupplyData.bin");
+        File f = new File("SupplyRequest.bin");
 
         if (!f.exists()) {
-            messageL1.setText("No supply data found.");
+            messageL1.setText("No supply requests found.");
             return;
         }
+
         try {
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
+
             boolean found = false;
+
             while (true) {
                 try {
                     SupplyItem si = (SupplyItem) ois.readObject();
-
-                    if (si.getFacility().equals(selectedFacility) && ("Low".equals(si.getStatus()) || "Sufficient".equals(si.getStatus()))) {
-                        supplyTV.getItems().add(si);
+                    if ("Pending".equals(si.getStatus())) {
+                        requestTV.getItems().add(si);
                         found = true;
                     }
+
                 } catch (EOFException e) {
                     break;
                 }
             }
             if (!found) {
-                messageL1.setText("No supplies found for this facility.");
+                messageL1.setText("No pending supply requests.");
             }
             ois.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-    private String calculateStatus(int quantity) {
-        if (quantity >= 10) {
-            return "Sufficient";
-        } else {
-            return "Low";
         }
     }
 }

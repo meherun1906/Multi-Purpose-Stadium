@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="521.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zarin.MaintenanceManager.maintenanceCompletionController">
+   <children>
+      <Label layoutX="110.0" layoutY="22.0" prefHeight="20.0" prefWidth="239.0" text="Completion of a Maintenance Task">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="63.0" text="Task" />
+      <Label layoutX="38.0" layoutY="96.0" text="Status" />
+      <Label layoutX="38.0" layoutY="132.0" text="Remarks" />
+      <ComboBox fx:id="taskCB" layoutX="84.0" layoutY="59.0" prefWidth="150.0" />
+      <ComboBox fx:id="statusCB" layoutX="84.0" layoutY="92.0" prefWidth="150.0" />
+      <ComboBox fx:id="remarkCB" layoutX="84.0" layoutY="128.0" prefWidth="150.0" />
+      <Button layoutX="297.0" layoutY="92.0" mnemonicParsing="false" onAction="#markOA" text="Mark As Done" />
+      <Button layoutX="297.0" layoutY="137.0" mnemonicParsing="false" onAction="#loadOA" text="Load in Table" />
+      <TableView fx:id="taskTV" layoutX="30.0" layoutY="213.0" prefHeight="200.0" prefWidth="405.0">
+        <columns>
+          <TableColumn fx:id="taskCol" prefWidth="110.5" text="Task" />
+          <TableColumn fx:id="areaCol" prefWidth="85.5" text="Area" />
+            <TableColumn fx:id="assignCol" prefWidth="102.0" text="Assigned To" />
+            <TableColumn fx:id="statusCol" prefWidth="106.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

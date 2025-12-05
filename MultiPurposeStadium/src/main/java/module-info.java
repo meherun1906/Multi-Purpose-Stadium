@@ -2,11 +2,11 @@ module mainpackage.multipurposestadium {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
-<<<<<<< HEAD
+//<<<<<<< HEAD
     //requires mainpackage.multipurposestadium;
-=======
-    requires java.xml;
->>>>>>> fd9588e2ff207eebb282c9ae7eaee8964d5e00cd
+//=======
+    //requires java.xml;
+//>>>>>>> fd9588e2ff207eebb282c9ae7eaee8964d5e00cd
 
 
     opens mainpackage.multipurposestadium to javafx.fxml;
