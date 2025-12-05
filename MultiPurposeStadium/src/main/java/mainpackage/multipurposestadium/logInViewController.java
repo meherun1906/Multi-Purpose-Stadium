@@ -3,6 +3,7 @@ package mainpackage.multipurposestadium;
 import Meherun.CEO.CEO;
 import Meherun.Client.Client;
 import Zarin.HeadOfSecurity.HeadOfSecurity;
+import Zarin.MaintenanceManager.MaintenanceManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -111,6 +112,35 @@ public class logInViewController
             if (log) {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/HeadOfSecurity/headOfSecurityDashboard.fxml"));
+                    Node node = loader.load();
+                    logInAnchorPane.getChildren().setAll(node);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        if (logInIdTextField.getText().length() == 6) {
+            MaintenanceManager logMm = null;
+            boolean log = false;
+            try {
+                FileInputStream fis = new FileInputStream("Maintenance.bin");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+
+                while (true) {
+                    MaintenanceManager mm = (MaintenanceManager) ois.readObject();
+                    if ((logInIdTextField.getText().equals(mm.getiD())) && (logInPasswordField.getText().equals(mm.getPassWord()))) {
+                        log = true;
+                        logMm = mm;
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                messageLabel.setText("User ID and PassWord doesn't match");
+            }
+            if (log) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/maintenanceManagerDashboard.fxml"));
                     Node node = loader.load();
                     logInAnchorPane.getChildren().setAll(node);
                 } catch (Exception e) {
