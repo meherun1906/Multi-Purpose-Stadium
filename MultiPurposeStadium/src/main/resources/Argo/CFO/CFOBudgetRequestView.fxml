@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Argo.CFO.CFOBudgetRequest">
+ <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Argo.CFO.CFOBudgetRequest">
    <children>
       <Label fx:id="requestFxId" layoutX="196.0" layoutY="43.0" text="CFOBudgetRequest">
          <font>
@@ -22,7 +21,7 @@
       <TextArea fx:id="justificationFxId" layoutX="386.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" text="justification" />
       <DatePicker fx:id="datepickerFxId" layoutX="398.0" layoutY="130.0" />
       <TextField fx:id="emailFxId" layoutX="15.0" layoutY="178.0" text="email" />
-      <TextField fx:id="amountFxId" layoutX="112.0" layoutY="216.0" />
+      <TextField fx:id="amountFxId" layoutX="74.0" layoutY="215.0" />
       <Text fx:id="amountlabel" layoutX="15.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount:" wrappingWidth="77.12109375" />
       <Button layoutX="40.0" layoutY="324.0" mnemonicParsing="false" onAction="#SubmitOnAction" text="Submit" />
    </children>
