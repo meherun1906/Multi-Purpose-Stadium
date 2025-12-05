@@ -1,7 +1,9 @@
 package Argo.CFO;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import org.w3c.dom.Text;
 
 import java.time.LocalDate;
@@ -11,31 +13,27 @@ public class CFO_RealTimeCashFlow {
     public String balance, cashFlow;
     public LocalDate date;
     @javafx.fxml.FXML
-    private TextField numFxid;
+    private TextField numTextfield;
     @javafx.fxml.FXML
-    private TextField emailFxid;
+    private ComboBox listComboBox;
     @javafx.fxml.FXML
-    private TextField phoneNumberFxid;
+    private Text currentFlowFxId;
     @javafx.fxml.FXML
-    private TextField IdFxId;
+    private TextField idTextfield;
     @javafx.fxml.FXML
-    private TextArea loadViewFxid;
+    private TextField emailTextfield;
     @javafx.fxml.FXML
-    private DatePicker datePickerFxid;
+    private DatePicker datepickerFxId;
     @javafx.fxml.FXML
-    private ComboBox balanceComboBox;
-    @javafx.fxml.FXML
-    private Label realtimeFxId;
-    @javafx.fxml.FXML
-    private Text cashFlowFxid;
+    private TextField phoneNumberTextfield;
 
-    public CFO_RealTimeCashFlow(String name, String phoneNumber, String email, String id, String currentbalance, String ashFlow, LocalDate date, LocalDate time) {
+    public CFO_RealTimeCashFlow(String name, String phoneNumber, String email, String id, String balance, String cashFlow, LocalDate date) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
         Id = id;
-        this.balance = currentbalance;
-        this.cashFlow = ashFlow;
+        this.balance = balance;
+        this.cashFlow = cashFlow;
         this.date = date;
     }
 
@@ -71,20 +69,20 @@ public class CFO_RealTimeCashFlow {
         Id = id;
     }
 
-    public String getCurrentbalance() {
+    public String getBalance() {
         return balance;
     }
 
-    public void setCurrentbalance(String currentbalance) {
-        this.balance = currentbalance;
+    public void setBalance(String balance) {
+        this.balance = balance;
     }
 
-    public String getAshFlow() {
+    public String getCashFlow() {
         return cashFlow;
     }
 
-    public void setAshFlow(String ashFlow) {
-        this.cashFlow = ashFlow;
+    public void setCashFlow(String cashFlow) {
+        this.cashFlow = cashFlow;
     }
 
     public LocalDate getDate() {
@@ -109,6 +107,6 @@ public class CFO_RealTimeCashFlow {
     }
 
     @javafx.fxml.FXML
-    public void loadOnAction(ActionEvent actionEvent) {
+    public void addOnAction(ActionEvent actionEvent) {
     }
 }
