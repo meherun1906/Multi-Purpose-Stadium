@@ -1,6 +1,7 @@
 package Sakib.Accountant;
 
 import javafx.collections.FXCollections;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class AuditAccController
 {
@@ -40,6 +42,8 @@ public class AuditAccController
 
     @javafx.fxml.FXML
     public void initialize() {
+        ArrayList<AuditAcc> auditList = new ArrayList<>();
+
 
         transIdColFD.setCellValueFactory(new PropertyValueFactory<>(" transactionId"));
         dateColFD.setCellValueFactory(new PropertyValueFactory<>("date"));
@@ -50,12 +54,35 @@ public class AuditAccController
         statusColFD.setCellValueFactory(new PropertyValueFactory<>("status"
                 ));
 
-         auditTable.setItems(FXCollections.observableArrayList(
-                new AuditAcc("1234",  "2025-12-01", "Bank Transfer", " 15000"),
-                new AuditAcc("2456", "2025-12-02", "card", "20000"),
-                new AuditAcc("5678", "2025-12-03", "Card", "20000")
-         ));
+        auditTable = FXCollections.observableArrayList(
+                new AuditAcc(1234, LocalDate.parse("2025-12-01"), "Bank Transfer", 15000.0),
+                new AuditAcc(2456, LocalDate.parse("2025-12-02"), "Card", 20000.0),
+                new AuditAcc(5678, LocalDate.parse("2025-12-03"), "Card", 20000.0)
+        );
+                auditTable.setItems(auditList);
 
+
+
+         ;
+
+        FilteredList<AuditAcc> filtered = new FilteredList<>(auditList, p -> true);
+
+        String idText = transIdTF.getText().trim();
+        String typeText = transTyprTF.getText().trim().toLowerCase();
+        String amountText = amountTF.getText().trim();
+        LocalDate date = dateDP.getValue();
+
+        filtered.setPredicate(item -> {
+
+            if (!idText.isEmpty()) {
+                try {
+                    int id = Integer.parseInt(idText);
+                    if (!item.getTransactionId().equals(id)) return false;
+                } catch (NumberFormatException ignored) {
+                }
+            }
+
+        }
     }
 
     @javafx.fxml.FXML

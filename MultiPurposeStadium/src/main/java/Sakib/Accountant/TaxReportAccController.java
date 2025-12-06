@@ -1,6 +1,7 @@
 package Sakib.Accountant;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -41,6 +42,7 @@ public class TaxReportAccController
     @javafx.fxml.FXML
     private TableColumn<TaxReportAcc, String> dateColFD;
 
+    private javafx.collections.ObservableList<TaxReportAcc> taxList = javafx.collections.FXCollections.observableArrayList();
     @javafx.fxml.FXML
     public void initialize() {
         reportIdColFD.setCellValueFactory(new PropertyValueFactory<>("reportId"));
@@ -59,15 +61,48 @@ public class TaxReportAccController
                 new TaxReportAcc("5678",  "2025-01-01", "2025-06-01 ", " 50000"),
                 new TaxReportAcc("500", "2025-06-02", "2025-12-04", "100000 "),
                 new TaxReportAcc("750", "2024-12-03", "2025-03-01", "50000"));
+
+        taxReportTable.setItems(taxList);
     }
 
     @javafx.fxml.FXML
     public void generateReportButton(ActionEvent actionEvent) {
+        LocalDate from = fromDateDP.getValue();
+        LocalDate to = toDateDP.getValue();
+
+        if (from == null || to == null) {
+            return;
+        }
+
+        ObservableList<TaxReportAcc> filtered = FXCollections.observableArrayList();
+
+        for (TaxReportAcc r : taxList) {
+            boolean insideRange =
+                    ( !r.getFromDate().isAfter(to) ) &&
+                            ( !r.getToDate().isBefore(from) );
+
+            if (insideRange) {
+                filtered.add(r);
+            }
+        }
+
+        taxReportTable.setItems(filtered);
     }
 
     @javafx.fxml.FXML
     public void submitReportButton(ActionEvent actionEvent) {
+        int id = Integer.parseInt(reportIdTF.getText());
+        LocalDate from = fromDateDP.getValue();
+        LocalDate to = toDateDP.getValue();
+        double taxAmount = Double.parseDouble(taxAmountTF.getText());
+        String status = statusTF.getText();
+
+        TaxReportAcc newReport = new TaxReportAcc(id, from, to, taxAmount, status);
+        taxList.add(newReport);
+
+        taxReportTable.setItems(taxList);
     }
+
 
     public void backButton(ActionEvent actionEvent) {
         try {

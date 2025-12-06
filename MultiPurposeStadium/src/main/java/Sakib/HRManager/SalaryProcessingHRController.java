@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SalaryProcessingHRController
 {
@@ -24,6 +25,9 @@ public class SalaryProcessingHRController
 
     @javafx.fxml.FXML
     public void initialize() {
+        empIdCol.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
+        payIdcol.setCellValueFactory(new PropertyValueFactory<>("payrollId"));
+        empNameCol.setCellValueFactory(new PropertyValueFactory<>("employeeName"));
     }
 
     @javafx.fxml.FXML
@@ -32,5 +36,7 @@ public class SalaryProcessingHRController
 
     @javafx.fxml.FXML
     public void salaryBackButton(ActionEvent actionEvent) {
+        System.out.println("Back button clicked – implement navigation here.");
+
     }
 }
