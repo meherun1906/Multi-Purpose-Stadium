@@ -47,7 +47,7 @@ public class FinancialDatabaseAccController {
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
 
         databaseTable.setItems(FXCollections.observableArrayList(
-                new FinancialDatabaseAcc("1245",  "Client Payment", "12000.0", "2025-1-5"),
+                new FinancialDatabaseAcc("1245", "Client Payment", "12000.0", "2025-1-5"),
                 new FinancialDatabaseAcc("3456", "Office Supplies", "15000.00", "2025-11-8 "),
                 new FinancialDatabaseAcc("9876", "Service Charge", "1600.00", "2025-11-15")
         ));
@@ -63,18 +63,19 @@ public class FinancialDatabaseAccController {
 
             showAlert("Validation Error", "All fields must be filled!");
             return;
-    }
+        }
 
-    public void backButton(ActionEvent actionEvent) {
-        try {
-            Parent root = FXMLLoader.load(
-                    getClass().getResource("CheifAccountantDashboard.fxml")
-            );
-            Stage stage = (Stage) ((Node) actionEvent.getSource())
-                    .getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
+        public void backButton (ActionEvent actionEvent){
+            try {
+                Parent root = FXMLLoader.load(
+                        getClass().getResource("CheifAccountantDashboard.fxml")
+                );
+                Stage stage = (Stage) ((Node) actionEvent.getSource())
+                        .getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+            }
         }
     }
 }
