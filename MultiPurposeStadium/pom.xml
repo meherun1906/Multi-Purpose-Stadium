@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                mainpackage.multipurposestadium/mainpackage.multipurposestadium.HelloApplication
+                                mainpackage.multipurposestadium/mainpackage.multipurposestadium.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

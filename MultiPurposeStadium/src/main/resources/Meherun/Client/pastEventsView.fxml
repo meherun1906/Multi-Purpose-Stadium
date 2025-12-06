@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="402.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.Client.PastEventsViewController">
+   <children>
+      <TableView fx:id="filteredTableView" layoutX="7.0" layoutY="168.0" prefHeight="200.0" prefWidth="390.0">
+        <columns>
+          <TableColumn fx:id="eventNameTabcol" prefWidth="70.39996528625488" text="EventName" />
+          <TableColumn fx:id="eventTypeTabCol" prefWidth="66.40001678466797" text="EventType" />
+            <TableColumn fx:id="descriptionTabCol" prefWidth="84.800048828125" text="Description" />
+            <TableColumn fx:id="startTabCol" prefWidth="59.199951171875" text="StartDate" />
+            <TableColumn fx:id="endTabCol" prefWidth="56.0" text="endDate" />
+            <TableColumn fx:id="clientNameTabCol" prefWidth="48.79998779296875" text="Client" />
+        </columns>
+      </TableView>
+      <Label layoutX="172.0" layoutY="31.0" text="Past Events">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="filterEventTypeComboBox" layoutX="179.0" layoutY="83.0" prefWidth="150.0" />
+      <Label layoutX="89.0" layoutY="88.0" text="Filter Type : ">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button layoutX="181.0" layoutY="129.0" mnemonicParsing="false" onAction="#filterButtonOnAction" text="Filter" />
+   </children>
+</AnchorPane>

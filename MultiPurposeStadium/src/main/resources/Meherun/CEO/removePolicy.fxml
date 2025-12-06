@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="494.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.CEO.RemovePoliciesController">
+   <children>
+      <ComboBox fx:id="selectDepartmentCB" layoutX="50.0" layoutY="140.0" prefHeight="26.0" prefWidth="142.0" />
+      <Text layoutX="50.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Department : " />
+      <Button layoutX="79.0" layoutY="179.0" mnemonicParsing="false" onAction="#viewPoliciesButtonOnAction" text="View Policies" />
+      <Text layoutX="293.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Policy ID :" />
+      <TextField fx:id="removePolicyIdTF" layoutX="273.0" layoutY="140.0" />
+      <Button layoutX="308.0" layoutY="179.0" mnemonicParsing="false" onAction="#removePolicyButtonOnAction" text="Remove" />
+      <Line endX="-100.00003051757812" endY="90.60000610351562" layoutX="342.0" layoutY="121.0" startX="-100.0" />
+      <TableView fx:id="policyTableView" layoutX="46.0" layoutY="275.0" prefHeight="158.0" prefWidth="390.0">
+         <columns>
+            <TableColumn fx:id="policyIdTableColumn" prefWidth="65.59991645812988" text="Policy ID" />
+            <TableColumn fx:id="departmentTableColumn" prefWidth="104.79998779296875" text="Department" />
+            <TableColumn fx:id="policyTableColumn" prefWidth="220.00001525878906" text="Policy" />
+         </columns>
+      </TableView>
+      <Label fx:id="removePolicyMessageLabel" layoutX="78.0" layoutY="231.0" prefHeight="26.0" prefWidth="290.0" />
+      <Text layoutX="158.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Departmental Policy">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

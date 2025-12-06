@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Zarin.MaintenanceManager.maintenanceManagerDashboardController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="anchorpane" prefHeight="560.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zarin.MaintenanceManager.maintenanceManagerDashboardController">
+   <children>
+      <Label layoutX="185.0" layoutY="14.0" text="Maintenance Manager Dashboard">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="32.0" layoutY="229.0" mnemonicParsing="false" onAction="#requestSuppliesOA" text="Request Supplies" />
+      <Button layoutX="30.0" layoutY="268.0" mnemonicParsing="false" onAction="#filterSupplyReqOA" text="Filter Supply Request" />
+      <Button layoutX="33.0" layoutY="186.0" mnemonicParsing="false" onAction="#createTaskOA" text="Create New Task" />
+      <Button layoutX="32.0" layoutY="365.0" mnemonicParsing="false" onAction="#equipmentServiceLogsOA" text="Equipment Service Logs " />
+      <Button layoutX="41.0" layoutY="411.0" mnemonicParsing="false" onAction="#facilitySummaryOA" text="Facility Summary" />
+      <Button layoutX="29.0" layoutY="138.0" mnemonicParsing="false" onAction="#checkSuppliesOA" text="Check Supplies" />
+      <Button layoutX="29.0" layoutY="97.0" mnemonicParsing="false" onAction="#viewMaintenanceScheduleOA" text="View Maintenance Schedule" />
+      <Button layoutX="32.0" layoutY="315.0" mnemonicParsing="false" onAction="#recordTaskCompletionOA" text="Record Task Completion" />
+      <Line endX="-86.0" endY="282.0" layoutX="295.0" layoutY="238.0" startX="-86.0" startY="-158.0" />
+      <AnchorPane fx:id="partialPane" layoutX="212.0" layoutY="37.0" prefHeight="521.0" prefWidth="471.0">
+         <children>
+            <Label layoutX="160.0" layoutY="186.0" text="WELCOME">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

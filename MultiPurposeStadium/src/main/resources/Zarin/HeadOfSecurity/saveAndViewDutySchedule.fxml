@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="427.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zarin.HeadOfSecurity.saveAndViewDutyScheduleController">
+   <children>
+      <Label layoutX="12.0" layoutY="206.0" text="Select Date" />
+      <DatePicker fx:id="loadDateDP" layoutX="85.0" layoutY="202.0" prefHeight="25.0" prefWidth="156.0" />
+      <Button layoutX="285.0" layoutY="202.0" mnemonicParsing="false" onAction="#LoadOA" text="Load Button" />
+      <Label fx:id="messageL" layoutX="145.0" layoutY="162.0" prefHeight="17.0" prefWidth="136.0" style="-fx-background-color: gray;" />
+      <TableView fx:id="dutyTV" layoutX="8.0" layoutY="263.0" prefHeight="164.0" prefWidth="435.0">
+        <columns>
+          <TableColumn fx:id="staffCol" prefWidth="84.5" text="Staff" />
+          <TableColumn fx:id="gateCol" prefWidth="83.0" text="Gate" />
+            <TableColumn fx:id="zoneCol" prefWidth="90.5" text="Zone" />
+            <TableColumn fx:id="shiftStartCol" prefWidth="89.0" text="Shift Start" />
+            <TableColumn fx:id="shiftEndCol" prefWidth="86.5" text="Shift End" />
+        </columns>
+      </TableView>
+      <Label layoutX="163.0" layoutY="14.0" text="View Duty Schedule">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="77.0" text="gate" />
+      <Label layoutX="30.0" layoutY="42.0" text="Staff" />
+      <Label layoutX="245.0" layoutY="77.0" text="Shift Date" />
+      <Label layoutX="271.0" layoutY="42.0" text="Zone" />
+      <TextField fx:id="staffTF" layoutX="74.0" layoutY="38.0" prefHeight="25.0" prefWidth="104.0" />
+      <ComboBox fx:id="gateCB" layoutX="71.0" layoutY="73.0" prefHeight="25.0" prefWidth="111.0" />
+      <ComboBox fx:id="zoneCB" layoutX="311.0" layoutY="38.0" prefHeight="25.0" prefWidth="111.0" />
+      <DatePicker fx:id="saveDateDP" layoutX="311.0" layoutY="73.0" prefHeight="25.0" prefWidth="111.0" />
+      <Button layoutX="191.0" layoutY="121.0" mnemonicParsing="false" onAction="#saveOA" text="Save Duty" />
+      <Line endX="194.5" layoutX="210.0" layoutY="186.0" startX="-174.0" />
+      <Label fx:id="messageL1" layoutX="145.0" layoutY="236.0" prefHeight="17.0" prefWidth="136.0" style="-fx-background-color: gray;" />
+   </children>
+</AnchorPane>
