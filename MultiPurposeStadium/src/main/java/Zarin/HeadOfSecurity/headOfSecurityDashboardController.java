@@ -16,7 +16,7 @@ public class headOfSecurityDashboardController
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void manageIncidentOA(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/HeadOfSecurity/updateIncident.fxml"));
@@ -55,7 +55,7 @@ public class headOfSecurityDashboardController
     @javafx.fxml.FXML
     public void viewDutyOA(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/HeadOfSecurity/viewDutySchedule.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/HeadOfSecurity/saveAndViewDutySchedule.fxml"));
             Node node = loader.load();
             partialPane.getChildren().setAll(node);
         }

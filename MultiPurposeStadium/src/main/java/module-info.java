@@ -2,12 +2,6 @@ module mainpackage.multipurposestadium {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
-    requires javafx.base;
-    requires mainpackage.multipurposestadium;
-
-    //requires mainpackage.multipurposestadium;
-    //requires mainpackage.multipurposestadium;
-    //requires mainpackage.multipurposestadium;
 
 
     opens mainpackage.multipurposestadium to javafx.fxml;

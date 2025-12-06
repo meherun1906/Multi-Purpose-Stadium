@@ -2,7 +2,7 @@ package mainpackage.multipurposestadium;
 
 import Meherun.CEO.CEO;
 import Meherun.Client.Client;
-//import Zarin.HeadOfSecurity.HeadOfSecurity;
+import Zarin.HeadOfSecurity.HeadOfSecurity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -89,7 +89,7 @@ public class logInViewController
                 }
             }
         }
-        /*if (logInIdTextField.getText().length() == 5) {
+        if (logInIdTextField.getText().length() == 5) {
             HeadOfSecurity logHoS = null;
             boolean log = false;
             try {
@@ -117,7 +117,7 @@ public class logInViewController
                     e.printStackTrace();
                 }
             }
-        }*/
+        }
     }
 
 }

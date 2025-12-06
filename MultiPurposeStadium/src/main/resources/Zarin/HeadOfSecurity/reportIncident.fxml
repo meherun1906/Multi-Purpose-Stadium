@@ -8,25 +8,31 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="427.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Zarin.HeadOfSecurity.reportIncidentController">
    <children>
-      <ComboBox fx:id="locationCB" layoutX="106.0" layoutY="14.0" prefHeight="25.0" prefWidth="82.0" />
-      <ComboBox fx:id="typeCB" layoutX="106.0" layoutY="58.0" prefHeight="25.0" prefWidth="82.0" />
-      <Label layoutX="31.0" layoutY="18.0" text="Location" />
-      <Label layoutX="39.0" layoutY="62.0" text="Type" />
+      <ComboBox fx:id="locationCB" layoutX="75.0" layoutY="43.0" prefHeight="25.0" prefWidth="82.0" />
+      <ComboBox fx:id="typeCB" layoutX="75.0" layoutY="71.0" prefHeight="25.0" prefWidth="82.0" />
+      <Label layoutX="14.0" layoutY="47.0" text="Location" />
+      <Label layoutX="24.0" layoutY="75.0" text="Type" />
       <TextField fx:id="descTF" layoutX="75.0" layoutY="99.0" prefHeight="25.0" prefWidth="362.0" />
       <Label layoutX="14.0" layoutY="103.0" text="description" />
-      <Label layoutX="14.0" layoutY="133.0" text="Report Date" />
-      <DatePicker fx:id="reportDP" layoutX="90.0" layoutY="129.0" prefHeight="25.0" prefWidth="115.0" />
-      <Button layoutX="284.0" layoutY="142.0" mnemonicParsing="false" onAction="#submitOA" text="Submit" />
-      <TableView fx:id="incidentTV" layoutX="39.0" layoutY="196.0" prefHeight="207.0" prefWidth="378.0">
+      <Label layoutX="12.0" layoutY="138.0" text="Report Date" />
+      <DatePicker fx:id="reportDP" layoutX="81.0" layoutY="134.0" prefHeight="25.0" prefWidth="115.0" />
+      <Button layoutX="235.0" layoutY="134.0" mnemonicParsing="false" onAction="#submitOA" text="Submit" />
+      <TableView fx:id="incidentTV" layoutX="37.0" layoutY="174.0" prefHeight="207.0" prefWidth="378.0">
         <columns>
           <TableColumn fx:id="locationCol" prefWidth="109.5" text="Location" />
           <TableColumn fx:id="typeCol" prefWidth="123.0" text="Type" />
             <TableColumn fx:id="statusCol" prefWidth="152.5" text="Status" />
         </columns>
       </TableView>
+      <Label fx:id="messageL" layoutX="138.0" layoutY="389.0" prefHeight="17.0" prefWidth="172.0" style="-fx-background-color: gray;" />
+      <Label layoutX="168.0" layoutY="14.0" text="Report Incident">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

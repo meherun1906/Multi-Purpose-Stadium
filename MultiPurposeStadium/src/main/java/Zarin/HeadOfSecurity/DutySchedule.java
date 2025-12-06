@@ -1,18 +1,23 @@
 package Zarin.HeadOfSecurity;
 
-public class DutySchedule {
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class DutySchedule implements Serializable {
     private String staff;
     private String gate;
     private String zone;
     private String shiftStart;
     private String shiftEnd;
+    private LocalDate date;
 
-    public DutySchedule(String staff, String gate, String zone, String shiftStart, String shiftEnd) {
+    public DutySchedule(String staff, String gate, String zone, String shiftStart, String shiftEnd, LocalDate date) {
         this.staff = staff;
         this.gate = gate;
         this.zone = zone;
         this.shiftStart = shiftStart;
         this.shiftEnd = shiftEnd;
+        this.date = date;
     }
 
     public String getStaff() {
@@ -54,4 +59,13 @@ public class DutySchedule {
     public void setShiftEnd(String shiftEnd) {
         this.shiftEnd = shiftEnd;
     }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
 }
