@@ -20,17 +20,6 @@ public class ClientDashboardController
     public void submitReviewButtonOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void editBookingsButtonOnAction(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/Client/edit.fxml"));
-            Node node = loader.load();
-            partialAnchorPane.getChildren().setAll(node);
-        }
-        catch (Exception e){
-            //
-        }
-    }
 
     @javafx.fxml.FXML
     public void bookStadiumButtonOnAction(ActionEvent actionEvent) {
@@ -69,18 +58,34 @@ public class ClientDashboardController
     }
 
     @javafx.fxml.FXML
-    public void checkAvailabilityButtonOnAction(ActionEvent actionEvent) {
+    public void viewPendingPaymentsButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void viewVIPBenefitsButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/Client/checkAvailability.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/Client/viewBenefits.fxml"));
             Node node = loader.load();
             partialAnchorPane.getChildren().setAll(node);
         }
         catch (Exception e){
-            e.printStackTrace();
+            //
         }
     }
 
     @javafx.fxml.FXML
-    public void viewPendingPaymentsButtonOnAction(ActionEvent actionEvent) {
+    public void viewMyBookingsButtonOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/Client/myBookingsView.fxml"));
+            Node node = loader.load();
+            partialAnchorPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            //
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void ViewPastReviewsButtonOnAction(ActionEvent actionEvent) {
     }
 }

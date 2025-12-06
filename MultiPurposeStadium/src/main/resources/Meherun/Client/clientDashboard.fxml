@@ -6,51 +6,56 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="clientPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.Client.ClientDashboardController">
+<AnchorPane fx:id="clientPane" prefHeight="560.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.Client.ClientDashboardController">
    <children>
-      <Button layoutX="14.0" layoutY="85.0" mnemonicParsing="false" onAction="#showPastEventsButtonOnAction" prefHeight="24.0" prefWidth="106.0" style="-fx-border-color: Black;" text="Past Events">
+      <Button layoutX="14.0" layoutY="56.0" mnemonicParsing="false" onAction="#showPastEventsButtonOnAction" prefHeight="50.0" prefWidth="130.0" style="-fx-border-color: Black;" text="Past Events">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="123.0" mnemonicParsing="false" onAction="#checkAvailabilityButtonOnAction" prefHeight="24.0" prefWidth="106.0" style="-fx-border-color: Black;" text="Check Availability">
+      <Button layoutX="14.0" layoutY="117.0" mnemonicParsing="false" onAction="#viewVIPBenefitsButtonOnAction" prefHeight="50.0" prefWidth="130.0" style="-fx-border-color: Black;" text="VIP Benefits">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="159.0" mnemonicParsing="false" onAction="#bookStadiumButtonOnAction" prefHeight="24.0" prefWidth="106.0" style="-fx-border-color: Black;" text="Book Stadium">
+      <Button layoutX="14.0" layoutY="177.0" mnemonicParsing="false" onAction="#bookStadiumButtonOnAction" prefHeight="50.0" prefWidth="130.0" style="-fx-border-color: Black;" text="Book Stadium">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="200.0" mnemonicParsing="false" onAction="#editBookingsButtonOnAction" prefHeight="24.0" prefWidth="106.0" style="-fx-border-color: Black;" text="Edit Bookings">
+      <Button layoutX="14.0" layoutY="238.0" mnemonicParsing="false" onAction="#viewMyBookingsButtonOnAction" prefHeight="50.0" prefWidth="130.0" style="-fx-border-color: Black;" text="My Bookings">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="237.0" mnemonicParsing="false" onAction="#cancelBookingsButtonOnAction" prefHeight="24.0" prefWidth="105.0" style="-fx-border-color: Black;" text="Cancel Bookings">
+      <Button layoutX="13.0" layoutY="305.0" mnemonicParsing="false" onAction="#cancelBookingsButtonOnAction" prefHeight="50.0" prefWidth="130.0" style="-fx-border-color: Black;" text="Cancel Bookings">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="16.0" layoutY="273.0" mnemonicParsing="false" onAction="#viewPendingPaymentsButtonOnAction" style="-fx-border-color: Black;" text="Pending Payments">
+      <Button layoutX="13.0" layoutY="372.0" mnemonicParsing="false" onAction="#viewPendingPaymentsButtonOnAction" prefHeight="50.0" prefWidth="129.0" style="-fx-border-color: Black;" text="Pending Payments">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="16.0" layoutY="309.0" mnemonicParsing="false" onAction="#submitReviewButtonOnAction" prefHeight="24.0" prefWidth="105.0" style="-fx-border-color: Black;" text="Submit Review">
+      <Button layoutX="14.0" layoutY="433.0" mnemonicParsing="false" onAction="#submitReviewButtonOnAction" prefHeight="50.0" prefWidth="130.0" style="-fx-border-color: Black;" text="Submit Review">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="26.0" layoutY="25.0" prefHeight="24.0" prefWidth="135.0" text="Client Dashboard">
+      <Label layoutX="92.0" layoutY="24.0" prefHeight="24.0" prefWidth="220.0" text="Client Dashboard">
          <font>
-            <Font size="14.0" />
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="partialAnchorPane" layoutX="186.0" prefHeight="402.0" prefWidth="413.0">
+      <AnchorPane fx:id="partialAnchorPane" layoutX="185.0" layoutY="58.0" prefHeight="494.0" prefWidth="502.0">
          <children>
-            <Line endX="-100.0" endY="290.20001220703125" layoutX="73.0" layoutY="69.0" startX="-100.0" />
+            <Line endX="-100.0" endY="412.20001220703125" layoutX="73.0" layoutY="69.0" startX="-100.0" startY="-52.600006103515625" />
          </children></AnchorPane>
+      <Button layoutX="12.0" layoutY="495.0" mnemonicParsing="false" onAction="#ViewPastReviewsButtonOnAction" prefHeight="50.0" prefWidth="130.0" style="-fx-border-color: Black;" text="Past Reviews">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

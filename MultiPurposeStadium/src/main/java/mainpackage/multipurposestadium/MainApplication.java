@@ -17,6 +17,6 @@ public class MainApplication extends Application {
         stage.setScene(scene);
         stage.show();
         //DummyObjects d = new DummyObjects();
-       //d.createDummyObjects();
+        //d.createDummyObjects();
     }
 }

@@ -10,6 +10,6 @@ public class AppendableObjectOutputStream extends ObjectOutputStream {
     }
     @Override
     public void writeStreamHeader() throws IOException {
-        reset();
+        //reset();
     }
 }

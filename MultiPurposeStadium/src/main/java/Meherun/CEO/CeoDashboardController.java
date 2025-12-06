@@ -70,12 +70,32 @@ public class CeoDashboardController
 
     @javafx.fxml.FXML
     public void capitalExpenditureButtonOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/CEO/approveRejectCapExBudget.fxml"));
+            Node node = loader.load();
+            partialAnchorPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void setVIPBenefitsButtonOnAction(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/CEO/setVIPBenefits.fxml"));
+            Node node = loader.load();
+            partialAnchorPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void viewUpcomingEventsButtonOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Meherun/CEO/viewUpcomingEvents.fxml"));
             Node node = loader.load();
             partialAnchorPane.getChildren().setAll(node);
         }

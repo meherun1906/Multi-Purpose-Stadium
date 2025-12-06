@@ -6,22 +6,30 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="402.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.Client.CancelBookingController">
+<AnchorPane prefHeight="494.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.Client.CancelBookingController">
    <children>
-      <TableView fx:id="tableView" layoutX="15.0" layoutY="250.0" prefHeight="144.0" prefWidth="365.0">
+      <TableView fx:id="tableView" layoutX="24.0" layoutY="284.0" prefHeight="159.0" prefWidth="454.0">
          <columns>
             <TableColumn fx:id="bookingIdTableColumn" prefWidth="71.99993705749512" text="Booking Id" />
-            <TableColumn fx:id="eventNameTableColumn" prefWidth="85.5999755859375" text="Event Name" />
-            <TableColumn fx:id="eventTypeTableColumn" prefWidth="81.5999755859375" text="Event Type" />
-            <TableColumn fx:id="startDateTableColumn" prefWidth="65.5999755859375" text="Start Date" />
-            <TableColumn fx:id="endTableColumn" prefWidth="60.0" text="End Date" />
+            <TableColumn fx:id="eventNameTableColumn" prefWidth="127.20001220703125" text="Event Name" />
+            <TableColumn fx:id="eventTypeTableColumn" prefWidth="80.80000305175781" text="Event Type" />
+            <TableColumn fx:id="startDateTableColumn" prefWidth="84.0" text="Start Date" />
+            <TableColumn fx:id="endTableColumn" prefWidth="89.60003662109375" text="End Date" />
          </columns>
       </TableView>
-      <Label alignment="TOP_LEFT" layoutX="150.0" layoutY="54.0" prefHeight="42.0" prefWidth="111.0" text="Enter Booking ID you want to cancel" wrapText="true" />
-      <TextField fx:id="calcelBookingIdTextField" layoutX="122.0" layoutY="105.0" />
-      <Button layoutX="171.0" layoutY="143.0" mnemonicParsing="false" onAction="#cancelBookingButtonOnAction" text="Cancel" />
-      <Label fx:id="cancellationMessageLabel" layoutX="69.0" layoutY="201.0" prefHeight="18.0" prefWidth="289.0" />
+      <Label alignment="TOP_LEFT" layoutX="204.0" layoutY="87.0" prefHeight="42.0" prefWidth="111.0" text="Enter Booking ID you want to cancel" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextField fx:id="calcelBookingIdTextField" layoutX="176.0" layoutY="138.0" />
+      <Button layoutX="218.0" layoutY="193.0" mnemonicParsing="false" onAction="#cancelBookingButtonOnAction" text="Cancel" />
+      <Label fx:id="cancellationMessageLabel" layoutX="130.0" layoutY="234.0" prefHeight="18.0" prefWidth="289.0" />
+      <Label layoutX="180.0" layoutY="23.0" prefHeight="22.0" prefWidth="150.0" text="Cancel Booking">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

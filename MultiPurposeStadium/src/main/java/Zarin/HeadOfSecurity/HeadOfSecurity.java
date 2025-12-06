@@ -4,8 +4,8 @@ import mainpackage.multipurposestadium.User;
 
 import java.io.Serializable;
 
-<<<<<<< HEAD
-/*public class HeadOfSecurity extends User implements Serializable {
+/*<<<<<<< HEAD
+public class HeadOfSecurity extends User implements Serializable {
     private String securityID;
 
     public HeadOfSecurity(String iD, String name, String eMail, String phone, String passWord, String securityID) {
@@ -20,7 +20,7 @@ import java.io.Serializable;
     public void setSecurityID(String securityID) {
         this.securityID = securityID;
     }
-}*/
+}
 =======
 public class HeadOfSecurity extends User implements Serializable {
     public HeadOfSecurity(String iD, String name, String eMail, String phone, String designation, String passWord) {
@@ -30,4 +30,4 @@ public class HeadOfSecurity extends User implements Serializable {
 }
     //private String securityId;
 
->>>>>>> 798d7d70684ef8a4993719d8b76a0e9814e8f541
+>>>>>>> 798d7d70684ef8a4993719d8b76a0e9814e8f541*/

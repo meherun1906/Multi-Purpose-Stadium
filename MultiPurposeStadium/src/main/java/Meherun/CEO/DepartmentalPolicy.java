@@ -1,6 +1,8 @@
 package Meherun.CEO;
 
-public class DepartmentalPolicy {
+import java.io.Serializable;
+
+public class DepartmentalPolicy implements Serializable {
     private String department, policy;
     private final String policyId;
 

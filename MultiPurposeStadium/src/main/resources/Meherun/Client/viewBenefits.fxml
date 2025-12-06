@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="494.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Meherun.Client.ViewVIPBenefitsController">
+   <children>
+      <Label layoutX="196.0" layoutY="39.0" prefHeight="18.0" prefWidth="109.0" text="VIP Benefits">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="clientBenefitsTableView" layoutX="26.0" layoutY="151.0" prefHeight="290.0" prefWidth="450.0">
+        <columns>
+          <TableColumn fx:id="clientBenefitsTableColumn" prefWidth="198.39995956420898" text="Benefits " />
+          <TableColumn fx:id="benefitsConditionTableColumn" prefWidth="249.6000518798828" text="Condition" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

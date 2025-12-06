@@ -15,39 +15,44 @@
       </Label>
       <AnchorPane fx:id="partialAnchorPane" layoutX="167.0" layoutY="67.0" prefHeight="494.0" prefWidth="502.0">
          <children>
-            <Line endX="-66.39999389648438" endY="404.5999755859375" layoutX="53.0" layoutY="48.0" startX="-66.39999389648438" startY="-47.399993896484375" />
+            <Line endX="-66.39999389648438" endY="404.5999755859375" layoutX="53.0" layoutY="48.0" startX="-66.39999389648438" startY="-50.19999694824219" />
          </children></AnchorPane>
-      <Button layoutX="20.0" layoutY="89.0" mnemonicParsing="false" onAction="#addPoliciesButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Add Policies">
+      <Button layoutX="20.0" layoutY="59.0" mnemonicParsing="false" onAction="#addPoliciesButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Add Policies">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="20.0" layoutY="148.0" mnemonicParsing="false" onAction="#removePoliciesButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Remove Policies">
+      <Button layoutX="20.0" layoutY="122.0" mnemonicParsing="false" onAction="#removePoliciesButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Remove Policies">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="20.0" layoutY="212.0" mnemonicParsing="false" onAction="#setVIPBenefitsButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Set VIP Benefits">
+      <Button layoutX="20.0" layoutY="187.0" mnemonicParsing="false" onAction="#setVIPBenefitsButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Set VIP Benefits">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="20.0" layoutY="274.0" mnemonicParsing="false" onAction="#setEventPriorityButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Event Priority">
+      <Button layoutX="20.0" layoutY="248.0" mnemonicParsing="false" onAction="#setEventPriorityButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Event Priority">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="20.0" layoutY="339.0" mnemonicParsing="false" onAction="#viewEventStatisticsButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Event Statistics">
+      <Button layoutX="20.0" layoutY="314.0" mnemonicParsing="false" onAction="#viewEventStatisticsButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Event Statistics">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="20.0" layoutY="477.0" mnemonicParsing="false" onAction="#revenueGrowthButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Revenue Growth">
+      <Button layoutX="20.0" layoutY="438.0" mnemonicParsing="false" onAction="#revenueGrowthButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Revenue Growth">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="20.0" layoutY="403.0" mnemonicParsing="false" onAction="#capitalExpenditureButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Capital Expenditures">
+      <Button layoutX="20.0" layoutY="377.0" mnemonicParsing="false" onAction="#capitalExpenditureButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Capital Expenditures">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="20.0" layoutY="496.0" mnemonicParsing="false" onAction="#viewUpcomingEventsButtonOnAction" prefHeight="50.0" prefWidth="122.0" style="-fx-border-color: Black;" text="Upcoming Events">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>

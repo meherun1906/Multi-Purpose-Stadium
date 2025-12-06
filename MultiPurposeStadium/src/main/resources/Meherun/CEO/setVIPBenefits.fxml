@@ -26,5 +26,10 @@
           <TableColumn fx:id="conditionTableColumn" prefWidth="242.40001525878904" text="Condition" />
         </columns>
       </TableView>
+      <Label fx:id="benefitsMessageLabel" alignment="TOP_CENTER" layoutX="91.0" layoutY="222.0" prefHeight="26.0" prefWidth="314.0" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

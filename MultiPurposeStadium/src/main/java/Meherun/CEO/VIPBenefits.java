@@ -1,6 +1,8 @@
 package Meherun.CEO;
 
-public class VIPBenefits {
+import java.io.Serializable;
+
+public class VIPBenefits implements Serializable {
     private String benefit, condition ;
 
     public VIPBenefits(String benefit, String condition) {

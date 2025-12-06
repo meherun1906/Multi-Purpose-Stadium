@@ -3,7 +3,7 @@ package Zarin.HeadOfSecurity;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
-public class DummyObjects {
+/*public class DummyObjects {
     public static void main (String[] args){
         new DummyObjects().createDummyObjects();
     }
@@ -19,4 +19,4 @@ public class DummyObjects {
             e.printStackTrace();
         }
     }
-}
+}*/
