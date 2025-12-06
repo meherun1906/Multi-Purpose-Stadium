@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="532.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sakib.Accountant.FinancialStatementAccController">
+    <children>
+        <ComboBox fx:id="monthCB" layoutX="178.0" layoutY="35.0" prefWidth="150.0" />
+        <ComboBox fx:id="yearCB" layoutX="167.0" layoutY="118.0" prefWidth="150.0" />
+        <Button layoutX="253.0" layoutY="177.0" mnemonicParsing="false" onAction="#generateButton" text="Generate" />
+        <Label layoutX="58.0" layoutY="39.0" text="Month" />
+        <Label layoutX="76.0" layoutY="113.0" text="Year" />
+      <Label fx:id="statusLabel" layoutX="85.0" layoutY="152.0" prefHeight="18.0" prefWidth="0.0" />
+      <TableView fx:id="financialStatTable" layoutX="112.0" layoutY="273.0" prefHeight="200.0" prefWidth="346.0">
+        <columns>
+          <TableColumn fx:id="recordIdColFD" prefWidth="75.0" text="RecordId" />
+          <TableColumn fx:id="monthColFD" prefWidth="75.0" text="Month" />
+            <TableColumn fx:id="yearColFD" prefWidth="75.0" text="Year" />
+        </columns>
+      </TableView>
+      <TextField fx:id="recordIdTF" layoutX="168.0" layoutY="75.0" />
+      <Label layoutX="71.0" layoutY="79.0" />
+      <Label layoutX="62.0" layoutY="79.0" text="RecordId" />
+    </children>
+</AnchorPane>
