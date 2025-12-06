@@ -67,4 +67,16 @@ public class WorkshopHR {
                 ", department='" + department + '\'' +
                 '}';
     }
+
+    public boolean isLongDuration(int minimumHours) {
+        try {
+            int hrs = Integer.parseInt(duration.replaceAll("[0-9]", "[0-10]"));
+            return hrs >= minimumHours;
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
+
 }

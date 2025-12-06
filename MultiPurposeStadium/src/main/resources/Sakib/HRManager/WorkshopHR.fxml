@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="518.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sakib.HRManager.WorkshopHRController">
+   <children>
+      <TextField fx:id="titleTF" layoutX="202.0" layoutY="14.0" />
+      <TextField fx:id="trainerTF" layoutX="203.0" layoutY="60.0" />
+      <TextField fx:id="durationTF" layoutX="202.0" layoutY="104.0" />
+      <ComboBox fx:id="departmentCB" layoutX="202.0" layoutY="146.0" prefWidth="150.0" />
+      <DatePicker fx:id="dateDP" layoutX="190.0" layoutY="200.0" />
+      <Label layoutX="96.0" layoutY="18.0" />
+      <Label layoutX="96.0" layoutY="64.0" text="Trainer" />
+      <Label layoutX="96.0" layoutY="108.0" />
+      <Label layoutX="96.0" layoutY="150.0" text="Department" />
+      <Label layoutX="96.0" layoutY="200.0" text="Date" />
+      <Label layoutX="96.0" layoutY="27.0" text="Title" />
+      <Label layoutX="90.0" layoutY="108.0" text="Duration" />
+      <Button layoutX="128.0" layoutY="247.0" mnemonicParsing="false" onAction="#addWorkshopButton" text="Add Workshop" />
+      <Button layoutX="339.0" layoutY="247.0" mnemonicParsing="false" onAction="#workshopBackButton" text="Back" />
+      <TableView fx:id="workshopTable" layoutX="72.0" layoutY="288.0" prefHeight="200.0" prefWidth="389.0">
+        <columns>
+          <TableColumn fx:id="titleColFD" prefWidth="75.0" text="Title" />
+          <TableColumn fx:id="trainerColFD" prefWidth="75.0" text="Trainer" />
+            <TableColumn fx:id="durationColFD" prefWidth="75.0" text="Duration" />
+            <TableColumn fx:id="departmentColFD" prefWidth="75.0" text="Department" />
+            <TableColumn fx:id="dateColFD" prefWidth="75.0" text="Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

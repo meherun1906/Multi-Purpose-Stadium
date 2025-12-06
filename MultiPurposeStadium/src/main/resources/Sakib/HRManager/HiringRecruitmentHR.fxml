@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sakib.HRManager.HiringRecruitmentHRController">
+
+    <children>
+
+        <Text layoutX="170.0" layoutY="40.0" text="Hiring &amp; Recruitment - Job Post">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Text>
+
+        <Button fx:id="createJobPostButton" layoutX="30.0" layoutY="70.0" onAction="#createJobPostButton" prefHeight="30.0" prefWidth="150.0" text="Create New Job Post" />
+
+
+        <Text layoutX="30.0" layoutY="120.0" text="Job Title:" />
+        <TextField fx:id="titleTF" layoutX="130.0" layoutY="105.0" prefWidth="200.0" />
+
+        <Text layoutX="30.0" layoutY="160.0" text="Vacancy:" />
+        <TextField fx:id="vacancyTF" layoutX="130.0" layoutY="145.0" prefWidth="200.0" />
+
+        <Text layoutX="30.0" layoutY="200.0" text="Salary Range:" />
+        <TextField fx:id="salaryRangeTF" layoutX="130.0" layoutY="185.0" prefWidth="200.0" />
+
+        <Text layoutX="30.0" layoutY="240.0" text="Requirements:" />
+        <TextArea fx:id="requirementsTA" layoutX="130.0" layoutY="225.0" prefHeight="80.0" prefWidth="300.0" wrapText="true" />
+
+
+        <Button fx:id="submitJobPostButton" layoutX="30.0" layoutY="325.0" onAction="#submitJobPostButton" prefHeight="30.0" prefWidth="150.0" text="Submit Job Post" />
+
+        <Button layoutX="540.0" layoutY="350.0" onAction="#backButtonHRHiring" prefHeight="30.0" prefWidth="80.0" text="Back" />
+
+        <Label fx:id="alertLabelHiring" layoutX="30.0" layoutY="365.0" prefHeight="25.0" prefWidth="550.0" />
+
+    </children>
+</AnchorPane>
