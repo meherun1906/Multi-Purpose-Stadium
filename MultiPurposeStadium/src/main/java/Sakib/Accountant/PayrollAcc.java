@@ -102,4 +102,7 @@ public class PayrollAcc {
                 ", totalSalary=" + totalSalary +
                 '}';
     }
+    public double calculateNetSalary() {
+        return (basicSalary + allowance) - deduction;
+    }
 }

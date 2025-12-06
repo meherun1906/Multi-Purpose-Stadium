@@ -1,8 +1,16 @@
 package Sakib.Accountant;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class AuditAccController
@@ -32,6 +40,22 @@ public class AuditAccController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        transIdColFD.setCellValueFactory(new PropertyValueFactory<>(" transactionId"));
+        dateColFD.setCellValueFactory(new PropertyValueFactory<>("date"));
+        transTypeColFD.setCellValueFactory(new PropertyValueFactory<>("transactionType"));
+        amountColFD.setCellValueFactory(new PropertyValueFactory<>("amount"));
+
+
+        statusColFD.setCellValueFactory(new PropertyValueFactory<>("status"
+                ));
+
+         auditTable.setItems(FXCollections.observableArrayList(
+                new AuditAcc("1234",  "2025-12-01", "Bank Transfer", " 15000"),
+                new AuditAcc("2456", "2025-12-02", "card", "20000"),
+                new AuditAcc("5678", "2025-12-03", "Card", "20000")
+         ));
+
     }
 
     @javafx.fxml.FXML
@@ -40,5 +64,17 @@ public class AuditAccController
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(
+                    getClass().getResource("CheifAccountantDashboard.fxml")
+            );
+            Stage stage = (Stage) ((Node) actionEvent.getSource())
+                    .getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch (IOException e) {
+        }
+
     }
 }

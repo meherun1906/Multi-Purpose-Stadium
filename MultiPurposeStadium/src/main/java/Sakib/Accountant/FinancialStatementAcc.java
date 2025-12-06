@@ -92,4 +92,7 @@ public class FinancialStatementAcc {
 
 
     }
+    public void calculateNetProfit() {
+        this.netProfit = this.totalIncome - this.totalExpense;
+    }
 }

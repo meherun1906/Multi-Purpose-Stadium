@@ -15,15 +15,15 @@ import java.io.IOException;
 public class ClientPaymentAccController
 {
     @javafx.fxml.FXML
-    private TableView<ClientPayment> cpTable;
+    private TableView<ClientPaymentAcc> cpTable;
     @javafx.fxml.FXML
-    private TableColumn<ClientPayment, String> amountColCP;
+    private TableColumn<ClientPaymentAcc, String> amountColCP;
     @javafx.fxml.FXML
-    private TableColumn<ClientPayment, String> dateColCP;
+    private TableColumn<ClientPaymentAcc, String> dateColCP;
     @javafx.fxml.FXML
-    private TableColumn<ClientPayment, String> methodColCP;
+    private TableColumn<ClientPaymentAcc, String> methodColCP;
     @javafx.fxml.FXML
-    private TableColumn<ClientPayment, String> statusColCP;
+    private TableColumn<ClientPaymentAcc, String> statusColCP;
     @javafx.fxml.FXML
     private ComboBox<String> statusCB;
     @javafx.fxml.FXML
@@ -41,10 +41,10 @@ public class ClientPaymentAccController
         statusColCP.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         cpTable.setItems(FXCollections.observableArrayList(
-                new ClientPayment("1000", "2025-12-01", "Bank Transfer", "Not Confirmed"),
-                new ClientPayment("500", "2025-12-02", "Cash", "Not Confirmed"),
-                new ClientPayment("750", "2025-12-03", "Card", "Confirmed")
-        ));
+                new ClientPaymentAcc("1000",  "2025-12-01", "Bank Transfer", "Not Confirmed"),
+                new ClientPaymentAcc("500", "2025-12-02", "Cash", "Not Confirmed"),
+                new ClientPaymentAcc("750", "2025-12-03", "Card", "Confirmed"));
+
 
         statusCB.getItems().addAll("Confirmed", "Not Confirmed");
         statusCB.setDisable(true);
@@ -67,7 +67,7 @@ public class ClientPaymentAccController
 
     @javafx.fxml.FXML
     public void editButton(ActionEvent actionEvent) {
-        ClientPayment selected = cpTable.getSelectionModel().getSelectedItem();
+       ClientPaymentAcc selected = cpTable.getSelectionModel().getSelectedItem();
 
         if (selected == null) {
             alertlabel.setText("Please select a row first.");
@@ -83,7 +83,7 @@ public class ClientPaymentAccController
 
     @javafx.fxml.FXML
     public void confirmButton(ActionEvent actionEvent) {
-        ClientPayment selected = cpTable.getSelectionModel().getSelectedItem();
+       ClientPaymentAcc selected = cpTable.getSelectionModel().getSelectedItem();
         String newStatus = statusCB.getValue();
 
         if (selected == null) {

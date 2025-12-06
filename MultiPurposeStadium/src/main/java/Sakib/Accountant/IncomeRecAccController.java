@@ -5,9 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,9 +21,21 @@ public class IncomeRecAccController
     private TextArea descriptionTA;
     @javafx.fxml.FXML
     private Label AlertlabelIR;
+    @javafx.fxml.FXML
+    private TableColumn<IncomeRecordAcc, Double> amountCol;
+    @javafx.fxml.FXML
+    private TableColumn<IncomeRecordAcc, String> sourceCol;
+    @javafx.fxml.FXML
+    private TableView<IncomeRecordAcc> incomeRecordTable;
+    @javafx.fxml.FXML
+    private TableColumn<IncomeRecordAcc, String> descriptionCol;
 
     @javafx.fxml.FXML
     public void initialize() {
+        amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        sourceCol.setCellValueFactory(new PropertyValueFactory<>("source"));
+        descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+
         AlertlabelIR.setText("");
     }
 

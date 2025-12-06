@@ -3,6 +3,7 @@ module mainpackage.multipurposestadium {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.xml;
+    requires javafx.base;
 //<<<<<<< HEAD
     //requires mainpackage.multipurposestadium;
 //=======

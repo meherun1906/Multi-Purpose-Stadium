@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,6 +26,16 @@ public class HiringRecruitmentHRController
     private Button submitJobPostButton;
     @javafx.fxml.FXML
     private Label alertLabelHiring;
+    @javafx.fxml.FXML
+    private TableColumn<HiringProcessHR, String> requirementsCol;
+    @javafx.fxml.FXML
+    private TableColumn<HiringProcessHR, String> titleCol;
+    @javafx.fxml.FXML
+    private TableColumn<HiringProcessHR, Double> salaryCol;
+    @javafx.fxml.FXML
+    private TableView<HiringProcessHR> jobPostTable;
+    @javafx.fxml.FXML
+    private TableColumn<HiringProcessHR, String> vacancyCol;
 
     @javafx.fxml.FXML
     public void initialize() {
