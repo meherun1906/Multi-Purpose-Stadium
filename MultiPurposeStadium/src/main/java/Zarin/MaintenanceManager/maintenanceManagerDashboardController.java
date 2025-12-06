@@ -26,7 +26,6 @@ public class maintenanceManagerDashboardController
         catch (Exception e){
             //
         }
-
     }
 
     @javafx.fxml.FXML
@@ -71,7 +70,7 @@ public class maintenanceManagerDashboardController
         
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void recordTaskCompletionOA(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/maintenanceCompletion.fxml"));
@@ -83,18 +82,38 @@ public class maintenanceManagerDashboardController
         }
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void facilitySummaryOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void equipmentServiceLogsOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/equipmentLogView.fxml"));
+            Node node = loader.load();
+            partialPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML
     public void filterSupplyReqOA(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/filterSupply.fxml"));
+            Node node = loader.load();
+            partialPane.getChildren().setAll(node);
+        }
+        catch (Exception e){
+            //
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void filterEquipmentServiceLogsOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Zarin/MaintenanceManager/filterEquipmentLogs.fxml"));
             Node node = loader.load();
             partialPane.getChildren().setAll(node);
         }

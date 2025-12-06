@@ -10,8 +10,6 @@ public class checkSuppliesController
     @javafx.fxml.FXML
     private Label messageL;
     @javafx.fxml.FXML
-    private ComboBox<String> selectFacilityCB;
-    @javafx.fxml.FXML
     private TableColumn<SupplyItem,String> statusCol;
     @javafx.fxml.FXML
     private Label messageL1;
@@ -27,6 +25,8 @@ public class checkSuppliesController
     private TableColumn<SupplyItem,String> itemCol;
     @javafx.fxml.FXML
     private TextField quantityTF;
+    @javafx.fxml.FXML
+    private TableColumn<SupplyItem,String> facilityCol;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -36,13 +36,6 @@ public class checkSuppliesController
                 "Restroom Block A",
                 "Generator Room"
         );
-        selectFacilityCB.getItems().addAll(
-                "Pitch",
-                "VIP Lounge",
-                "Restroom Block A",
-                "Generator Room"
-        );
-
         itemCB.getItems().addAll(
                 "Toilet Paper",
                 "Soap",
@@ -51,9 +44,8 @@ public class checkSuppliesController
         itemCol.setCellValueFactory(new PropertyValueFactory<>("item"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
-
+        facilityCol.setCellValueFactory(new PropertyValueFactory<>("facility"));
     }
-
     @javafx.fxml.FXML
     public void saveOA(ActionEvent actionEvent) {
         messageL.setText("");
@@ -105,16 +97,7 @@ public class checkSuppliesController
     public void loadOA(ActionEvent actionEvent) {
         supplyTV.getItems().clear();
         messageL1.setText("");
-
-        String selectedFacility = selectFacilityCB.getValue();
-
-        if (selectedFacility == null) {
-            messageL1.setText("Please select a facility to load supplies.");
-            return;
-        }
-
         File f = new File("SupplyData.bin");
-
         if (!f.exists()) {
             messageL1.setText("No supply data found.");
             return;
@@ -127,7 +110,7 @@ public class checkSuppliesController
                 try {
                     SupplyItem si = (SupplyItem) ois.readObject();
 
-                    if (si.getFacility().equals(selectedFacility) && ("Low".equals(si.getStatus()) || "Sufficient".equals(si.getStatus()))) {
+                    if  ("Low".equals(si.getStatus()) || "Sufficient".equals(si.getStatus())){
                         supplyTV.getItems().add(si);
                         found = true;
                     }
@@ -135,9 +118,9 @@ public class checkSuppliesController
                     break;
                 }
             }
-            if (!found) {
-                messageL1.setText("No supplies found for this facility.");
-            }
+            //if (!found) {
+                //messageL1.setText("No supplies found for this facility.");
+            //}
             ois.close();
         } catch (Exception e) {
             e.printStackTrace();

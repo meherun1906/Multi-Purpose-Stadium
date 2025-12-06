@@ -80,7 +80,6 @@ public class requestSuppliesController
             return;
         }
         try {
-            //File f = new File("SupplyData.bin");
             File f = new File("SupplyData.bin");
             SupplyItem si = new SupplyItem(
                     facilityCB.getValue(),
